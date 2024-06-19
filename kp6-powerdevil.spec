@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.5
+%define		kdeplasmaver	6.1.0
 %define		qtver		5.15.2
 %define		kpname		powerdevil
 
 Summary:	Manages the power consumption settings of a Plasma Shell
 Name:		kp6-%{kpname}
-Version:	6.0.5
+Version:	6.1.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	deef232b4ceb90980818fa4358a37d52
+# Source0-md5:	3355343cbf9134e078e7b9e752828fd7
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -38,6 +38,7 @@ BuildRequires:	libxcb-devel
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
+Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
@@ -82,8 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/autostart/powerdevil.desktop
 %{_libdir}/libpowerdevilconfigcommonprivate.so
 %{_libdir}/libpowerdevilcore.so
-%dir %{_libdir}/qt6/plugins/kf6/powerdevil
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/powerdevil/powerdevilupowerbackend.so
 %{_datadir}/dbus-1/system-services/org.kde.powerdevil.discretegpuhelper.service
 %{_datadir}/polkit-1/actions/org.kde.powerdevil.discretegpuhelper.policy
 %{_datadir}/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
