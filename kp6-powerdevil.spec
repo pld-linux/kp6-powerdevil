@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		5.15.2
 %define		kpname		powerdevil
 
 Summary:	Manages the power consumption settings of a Plasma Shell
 Name:		kp6-%{kpname}
-Version:	6.1.5
-Release:	2
+Version:	6.2.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	7087c1e86702436dfd62c1e18eb7ddcc
+# Source0-md5:	fd968801f7ef49a5b68550d6448e1188
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -103,15 +103,41 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_runscriptaction.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_suspendsessionaction.so
 
-%{systemduserunitdir}/plasma-powerprofile-osd.service
 %attr(755,root,root) %{_libdir}/libpowerdevilconfigcommonprivate.so.*.*
 %ghost %{_libdir}/libpowerdevilconfigcommonprivate.so.6
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_powerdevilprofilesconfig.so
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/backlighthelper
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/chargethresholdhelper
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/discretegpuhelper
-%attr(755,root,root) %{_prefix}/libexec/power_profile_osd_service
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_powerdevil.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_screenbrightnesscontrolaction.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/batterymonitorplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/libbatterymonitorplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/qmldir
+%{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/brightnesscontrolplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/libbrightnesscontrolplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/qmldir
 %{_desktopdir}/kcm_powerdevilprofilesconfig.desktop
-%{_datadir}/dbus-1/services/org.kde.powerdevil.powerProfileOsdService.service
 %{_datadir}/qlogging-categories6/powerdevil.categories
 %{_datadir}/knotifications6/powerdevil.notifyrc
+%{_datadir}/metainfo/org.kde.plasma.battery.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.brightness.appdata.xml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/config/main.xml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/BatteryItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/CompactRepresentation.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/InhibitionHint.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/PopupDialog.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/PowerManagementItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/PowerProfileItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/main.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.battery/metadata.json
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/BrightnessItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/CompactRepresentation.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/KeyboardColorItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/NightLightItem.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/PopupDialog.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/main.qml
+%{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/metadata.json
+%{_datadir}/qlogging-categories6/batterymonitor.categories
