@@ -111,10 +111,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/discretegpuhelper
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/krunner/krunner_powerdevil.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_screenbrightnesscontrolaction.so
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor
 %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/batterymonitorplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/libbatterymonitorplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/private/batterymonitor/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin
 %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/brightnesscontrolplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/libbrightnesscontrolplugin.so
@@ -124,7 +126,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/knotifications6/powerdevil.notifyrc
 %{_datadir}/metainfo/org.kde.plasma.battery.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.brightness.appdata.xml
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.battery
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/config
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/config/main.xml
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/BatteryItem.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/CompactRepresentation.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/InhibitionHint.qml
@@ -133,6 +139,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/PowerProfileItem.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/contents/ui/main.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.battery/metadata.json
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui
 %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/BrightnessItem.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/CompactRepresentation.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.brightness/contents/ui/KeyboardColorItem.qml
