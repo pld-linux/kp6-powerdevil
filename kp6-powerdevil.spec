@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.3.5
+%define		kdeplasmaver	6.4.0
 %define		qtver		5.15.2
 %define		kpname		powerdevil
 
 Summary:	Manages the power consumption settings of a Plasma Shell
 Name:		kp6-%{kpname}
-Version:	6.3.5
+Version:	6.4.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3abd6b4c19179b9d268c1473714386fd
+# Source0-md5:	4c0beb24a76d4e7425a29dc2f1cafbd3
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_powerprofileaction.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_runscriptaction.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/powerdevil/action/powerdevil_suspendsessionaction.so
-
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_mobile_power.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_powerdevilprofilesconfig.so
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/backlighthelper
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/chargethresholdhelper
@@ -124,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/libbrightnesscontrolplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/private/brightnesscontrolplugin/qmldir
+%{_desktopdir}/kcm_mobile_power.desktop
 %{_desktopdir}/kcm_powerdevilprofilesconfig.desktop
 %{_datadir}/qlogging-categories6/powerdevil.categories
 %{_datadir}/knotifications6/powerdevil.notifyrc
