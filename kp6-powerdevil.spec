@@ -16,6 +16,7 @@ Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{vers
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
+BuildRequires:	ddcutil-devel
 BuildRequires:	kf6-bluez-qt-devel
 BuildRequires:	kf6-kauth-devel
 BuildRequires:	kf6-kcmutils-devel
