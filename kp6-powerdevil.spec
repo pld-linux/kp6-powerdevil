@@ -49,6 +49,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Manages the power consumption settings of a Plasma Shell.
 
+%description -l pl.UTF-8
+Zarządzanie ustawieniami zużycia energii powłoki Plazmy.
+
 %prep
 %setup -q -n %{kpname}-%{version}
 
