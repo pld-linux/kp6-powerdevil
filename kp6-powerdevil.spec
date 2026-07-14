@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.7.2
+%define		kdeplasmaver	6.7.3
 %define		qtver		5.15.2
 %define		kpname		powerdevil
 
 Summary:	Manages the power consumption settings of a Plasma Shell
 Name:		kp6-%{kpname}
-Version:	6.7.2
+Version:	6.7.3
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5b4ef0e4994540c31610c99531605a69
+# Source0-md5:	4d0794ad16fc05d169c9144230d7353f
 URL:		https://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
